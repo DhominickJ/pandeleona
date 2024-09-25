@@ -1,4 +1,4 @@
-import routeHandlers from "../pages/handlers"
+import routeHandlers from "../scripts/handlers"
 import { fetchHtml, hash } from "./fetcher"
 
 export default class Router {

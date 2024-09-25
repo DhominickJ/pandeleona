@@ -10,7 +10,7 @@ export async function fetchHtml(url, params) {
     // If there are no routes match it 
     // will just return the contents of the 404 html string.
     if (fetchedHtml === await (await fetch('index.html')).text()) 
-        fetchedHtml = await (await fetch('/src/routes/404.html')).text()
+        fetchedHtml = await (await fetch('/src/routes/error.html')).text()
 
     for (const param of params) {
         // Parameter replacement based on the name that it searches inside of the fetched HTML

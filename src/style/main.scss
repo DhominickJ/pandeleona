@@ -1,7 +1,7 @@
 :root {
-  --primary: #d46f2b;
-  --secondary: #87461b;
-  --accent: #553005;
+  --primary: #E9592B;
+  --secondary: #FFCC3C;
+  --accent: #5c2410;
   
   --text: #eb4a00;
   --fill: #d1b01a;
@@ -89,5 +89,24 @@ nav {
       color: var(--primary);
       font-size: 2rem;
     }
+  }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  h1{
+    font-size: 1rem;
+    font-weight: 400;
+    scale: 0.9;
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+      font-size: 1rem;
+  }
+
+  button {
+      width: 100%;
   }
 }

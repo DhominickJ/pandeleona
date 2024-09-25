@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="order-form">
+      <h1>Order Your Daily Bread</h1>
+      <p>Don't loaf around, place your order now!</p>
+      <form action="/">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="bread-type">Type of Bread:</label>
+          <select id="bread-type" name="bread-type" required>
+              <option value="sourdough">Sourdough</option>
+              <option value="baguette">Baguette</option>
+              <option value="rye">Rye</option>
+              <option value="whole-wheat">Whole Wheat</option>
+          </select>
+          
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" required>
+          
+          <button type="submit">Place Order</button>
+      </form>
+  </div>
+  <div class="bread-image">
+      <img src="/img/cheese.png" alt="Delicious Bread">
+  </div>
+</div>

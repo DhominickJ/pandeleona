@@ -1,0 +1,116 @@
+main.route-order{    
+    display: flex;
+    justify-content: space-around;
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        background-color: #FFCC3C;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 95%;
+        margin-top: 1%;
+        // margin: 0 auto;
+    }
+    
+    .order-form {
+        flex: 1;
+        border: #E9592B solid 10px;
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        // margin-right: 20px;
+        // align-items: center;
+    }
+    
+    .bread-image {
+        flex: 1;
+    }
+    
+    .bread-image img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    h1 {
+        color: #E9592B;
+    }
+    
+    p {
+        font-size: 1.2rem;
+        color: #1F2123;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    
+    label {
+        margin-top: 10px;
+        color: #1F2123;
+    }
+    
+    input, select{
+        margin-top: 5px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+    }
+    
+    button {
+        background-color: #d34e10;
+        color: #FCF9F5;
+        cursor: pointer;
+        width: 50%;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        align-self: center;
+        border-radius: 10px;
+        border: none;
+    }
+    
+    button:hover {
+        background-color: #d87d14;
+    }    
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    h1{
+        font-size: 2.1rem;
+        font-weight: 800;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-form, .bread-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 80%;
+        margin-bottom: 10%;
+    }
+    img{
+        display: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        }
+    }
+}
