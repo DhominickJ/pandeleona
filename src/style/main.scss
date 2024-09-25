@@ -18,6 +18,10 @@ html, body {
   min-height: 100vh;
 }
 
+header > img{
+  width: 5%;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -36,8 +40,10 @@ header {
     color: var(--accent);
     text-align: left;
 
-    font-weight: 400;
+    font-weight: 800;
     font-size: 2.75rem;
+    margin-left: -5%;
+    margin-top: 1%;
   }
 }
 
@@ -87,7 +93,7 @@ nav {
 
     i {
       color: var(--primary);
-      font-size: 2rem;
+      font-size: 3.5rem;
     }
   }
 }
@@ -98,6 +104,24 @@ nav {
     font-size: 1rem;
     font-weight: 400;
     scale: 0.9;
+    display: none;
+  }
+  header {
+    img{
+    width: 10%;
+    }
+    nav{
+      a{
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+      i{
+        font-size: 3rem;
+      }
+      p{
+        display: none;
+      }
+    }
   }
 }
 
