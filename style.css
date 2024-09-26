@@ -3,7 +3,8 @@
   height: 3000px;
   overflow: hidden;
   position: relative;
-  width: 1280px;
+  width: 100%;
+  margin: 0px;
 }
 
 .home-page .fun-facts-section {
