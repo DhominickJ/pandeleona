@@ -1,4 +1,4 @@
-import routeHandlers from "../pages/handlers"
+import routeHandlers from "../scripts/handlers"
 import { fetchHtml, hash } from "./fetcher"
 
 export default class Router {
@@ -45,7 +45,7 @@ export default class Router {
 
             this.container.innerHTML = html
             this.container.className = `route-${url}`
-            routeHandlers[url]()
+            routeHandlers[url]
         }
 
         window.onhashchange = handleFetch

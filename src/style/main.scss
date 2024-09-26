@@ -1,21 +1,32 @@
 :root {
-  --primary: #d46f2b;
-  --secondary: #87461b;
-  --accent: #553005;
+  --primary: #E9592B;
+  --secondary: #FFCC3C;
+  --accent: #5c2410;
   
-  --text: #eb4a00;
-  --fill: #d1b01a;
+  --text: #fcf9f5;
+  --fill: #faf5f5;
 }
+
+@font-face {
+  font-family: 'Marshie';
+  src: url('/fonts/Soft\ Marshmallow.otf');
+  font-weight: normal;
+  font-style: normal;
+  }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins';
+  font-family: 'Marshie';
 }
 
 html, body {
   min-height: 100vh;
+}
+
+header > img{
+  width: 5%;
 }
 
 body {
@@ -26,14 +37,20 @@ body {
 }
 
 header {
+  display: flex;
   padding-block: 0.5rem;
+  justify-content: space-evenly;
+  background-color: var(--fill);
+  z-index: 2;
 
   h1 {
     color: var(--accent);
-    text-align: center;
+    text-align: left;
 
-    font-weight: 400;
-    font-size: 1.75rem;
+    font-weight: 800;
+    font-size: 2.75rem;
+    margin-left: -5%;
+    margin-top: 1%;
   }
 }
 
@@ -47,10 +64,9 @@ main {
 
 nav {
   display: flex;
-  justify-content: space-evenly;
-  padding-block: 1rem;
-
-  background-color: var(--secondary);
+  justify-content: right;
+  width: 50%;
+  // padding-block: 1rem;
 
   a {
     display: grid;
@@ -74,7 +90,7 @@ nav {
       color: var(--accent);
       background-color: var(--primary);
 
-      transform: translateY(-2rem);
+      transform: translateY(2rem);
 
       i {
         color: var(--accent);
@@ -84,7 +100,44 @@ nav {
 
     i {
       color: var(--primary);
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
+  }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  h1{
+    font-size: 1rem;
+    font-weight: 400;
+    scale: 0.9;
+    display: none;
+  }
+  header {
+    img{
+    width: 10%;
+    }
+    nav{
+      a{
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+      i{
+        font-size: 3rem;
+      }
+      p{
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+      font-size: 1rem;
+  }
+
+  button {
+      width: 100%;
   }
 }
