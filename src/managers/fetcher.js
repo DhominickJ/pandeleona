@@ -5,12 +5,12 @@
  * @param {string[][]} params 
  */
 export async function fetchHtml(url, params) {
-    let fetchedHtml = await (await fetch(`/src/routes/${url || 'index'}.html`)).text()
+    let fetchedHtml = await (await fetch(`/routes/${url || 'index'}.html`)).text()
 
     // If there are no routes match it 
     // will just return the contents of the 404 html string.
     if (fetchedHtml === await (await fetch('index.html')).text()) 
-        fetchedHtml = await (await fetch('/src/routes/error.html')).text()
+        fetchedHtml = await (await fetch('/routes/error.html')).text()
 
     for (const param of params) {
         // Parameter replacement based on the name that it searches inside of the fetched HTML
