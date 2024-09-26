@@ -4,7 +4,7 @@
   --accent: #5c2410;
   
   --text: #fcf9f5;
-  --fill: #d1b01a;
+  --fill: #faf5f5;
 }
 
 @font-face {
@@ -40,7 +40,7 @@ header {
   display: flex;
   padding-block: 0.5rem;
   justify-content: space-evenly;
-  background-color: var(--secondary);
+  background-color: var(--fill);
   z-index: 2;
 
   h1 {
