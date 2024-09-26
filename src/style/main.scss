@@ -8,11 +8,20 @@
 }
 
 @font-face {
-  font-family: 'Marshie';
-  src: url('/fonts/Soft\ Marshmallow.otf');
-  font-weight: normal;
+  font-display: swap;
   font-style: normal;
-  }
+  src: url("../public/fonts/VarelaRoundRegular.ttf");
+  font-family: "Varela Round";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../public/fonts/InterRegular.ttf");
+  font-family: "Inter";
+  font-weight: 400;
+}
+
 
 * {
   margin: 0;

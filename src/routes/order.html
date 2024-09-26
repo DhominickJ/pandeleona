@@ -1,35 +1,250 @@
-<div class="container">
-  <div class="order-form">
-      <h1>Order Now!</h1>
-      <p>Don't loaf around, place your order now!</p>
-      <form action="/">
-            
-        <div class="prod-desc">
-            <img src="/img/cheese.png" alt="Delicious Bread">
-            <div class="product-info">
-                <h2>Cheese (Cheesy Leona)</h2>
-                <p class="price">₱16 each | ₱120 for 6</p>
-                <div class="total-price">
-                    <p>Total: ₱48</p>
-                </div>
-            </div>
-        </div>
-        <div class="quantity-selector">
-            <button type="button" class="quantity-btn">-</button>
-            <input type="number" title="Quantity" name="quantity" min="1" readonly>
-            <button  type="button" class="quantity-btn">+</button>
-        </div>
-        <div class="action-buttons">
-            <button type="button" class="cancel-btn">Cancel</button>
-            <button type="button" class="confirm-btn">Confirm</button>
-        </div>
-          <!-- <select id="bread-type" name="bread-type" required>
-              <option value="sourdough">Sourdough</option>
-              <option value="baguette">Baguette</option>
-              <option value="rye">Rye</option>
-              <option value="whole-wheat">Whole Wheat</option>
-          </select> -->
-      </form>
-  </div>
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Order page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      /**
+       * Handles the value change functionality in a quantity input
+       */
+      function handleQuantityInput(/** @type {HTMLElement} */ target) {
+        const fieldElement = /** @type {HTMLElement[]} */ target.querySelector(`[quantity-for="${target.id}"]`);
+        const stepUpButton = /** @type {HTMLElement[]} */ target.querySelector(`[quantity-increase]`);
+        const stepDownButton = /** @type {HTMLElement[]} */ target.querySelector(`[quantity-decrease]`);
 
+        const fieldElementIsInput = fieldElement instanceof HTMLInputElement;
+        const fieldElementIsNumberInput = fieldElementIsInput && fieldElement.type === "number";
+
+        function setNumberValue(/** @type {number} */ n = 0) {
+          if (fieldElementIsNumberInput) return;
+          if (fieldElementIsInput) {
+            fieldElement.value = n;
+          } else if (fieldElement) {
+            fieldElement.innerHTML = n;
+          }
+        }
+
+        const input =
+          fieldElement instanceof HTMLInputElement && fieldElement.type === "number"
+            ? fieldElement
+            : (() => {
+                const element = document.createElement("input");
+                element.type = "number";
+                element.min = 0;
+                element.step = 1;
+                element.value = 1;
+                element.hidden = true;
+                return element;
+              })();
+
+        setNumberValue(1);
+        stepUpButton?.addEventListener("click", (/** @type {MouseEvent} */ event) => {
+          input.stepUp();
+          setNumberValue(input.valueAsNumber);
+        });
+        stepDownButton?.addEventListener("click", (/** @type {MouseEvent} */ event) => {
+          input.stepDown();
+          setNumberValue(input.valueAsNumber);
+        });
+      }
+      /**
+       * Hydrate quantity inputs(s)
+       */
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll("[quantity-input]"));
+        for (const element of elements) handleQuantityInput(element);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="order-page">
+        <header class="navbar">
+            <img src="public/images/img_header_logo.png" alt="Headerlogo" class="headerlogo_one" />
+            <ul class="tabs">
+              <li>
+                <a href="home.html" class="home-link">
+                  <p class="home ui text size-textmd">Home</p>
+                </a>
+              </li>
+              <li>
+                <a href="menu.html" class="menu-link">
+                  <p class="menu ui text size-textmd">Menu</p>
+                </a>
+              </li>
+              <li>
+                <a href="order.html" class="menu-link">
+                  <p class="menu ui text size-textmd">Order Now</p>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="menu-link">
+                  <p class="menu ui text size-textmd">About Us</p>
+                </a>
+              </li>
+            </ul>
+          </header>
+      <div class="container">
+        <div class="columntitle">
+          <p class="title ui text size-textxl">Order Now</p>
+          <div class="rowcheezy1one">
+            <img src="public/images/img_cheezy_1_1.png" alt="Cheezy1one" class="cheezy1one_one" />
+            <div class="columnproduct">
+              <p class="product ui text size-text2xl">Cheese (Cheesy Leona)</p>
+              <p class="ui text size-textlg">₱16 each | ₱120 for 6</p>
+              <div class="linetwo_one"></div>
+              <div class="rowdescription">
+                <p class="description ui text size-textxs">
+                  So Cheesy, It’ll Make You Grin! <br /><br />Each bite reveals a melted, cheesy center that’s both
+                  creamy and savory!
+                </p>
+                <div class="columnprice_one">
+                  <p class="ui text size-textxs">Quantity</p>
+                  <div quantity-input id="195:204" class="rowgroupseven">
+                    <div class="columncheck">
+                      <div class="row_one">
+                        <div quantity-decrease class="rowcheck_three">
+                          <img src="public/images/img_check_indeterminate_small.svg" alt="Check" class="check_three" />
+                        </div>
+                        <div class="rowplus_three">
+                          <img src="public/images/img_plus.svg" alt="Plus" class="plus_three" />
+                        </div>
+                      </div>
+                      <label class="groupseven">
+                        <input
+                          name="groupseven"
+                          placeholder="3"
+                          type="number"
+                          quantity-for="195:204"
+                          step="1"
+                          min="0"
+                          value="1"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="rowclassic2one">
+            <img src="public/images/img_classic_2_1.png" alt="Classic2one" class="classic2one_one" />
+            <div class="rowlineone_one">
+              <div class="lineone_one"></div>
+              <div class="columnlinetwo">
+                <div class="columnproduct-1">
+                  <p class="product_one ui text size-text2xl">Original Flavor<br />(Classic Leona)</p>
+                  <p class="ui text size-textlg">₱12 each | ₱90 for 6</p>
+                </div>
+                <div class="linetwo_three"></div>
+                <div class="rowprice_one">
+                  <p class="description-1 ui text size-textxs">
+                    Classic, Comforting, Always Fresh!<br /><br />Soft, fluffy, with just the right amount of crunch on
+                    the outside.
+                  </p>
+                  <div class="columnprice_one">
+                    <p class="ui text size-textxs">Quantity</p>
+                    <div quantity-input id="195:187" class="rowgroupseven">
+                      <div class="columncheck">
+                        <div class="row_one">
+                          <div quantity-decrease class="rowcheck_three">
+                            <img
+                              src="public/images/img_check_indeterminate_small.svg"
+                              alt="Check"
+                              class="check_three"
+                            />
+                          </div>
+                          <div class="rowplus_three">
+                            <img src="public/images/img_plus.svg" alt="Plus" class="plus_three" />
+                          </div>
+                        </div>
+                        <label class="groupseven">
+                          <input
+                            name="groupseven"
+                            placeholder="3"
+                            type="number"
+                            quantity-for="195:187"
+                            step="1"
+                            min="0"
+                            value="1"
+                          />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columnmalunggay">
+          <div class="order3">
+            <div class="rowmalunggay1on">
+              <img src="public/images/img_malunggay_1_1.png" alt="Malunggay1one" class="malunggay1one" />
+              <div class="rowlineone">
+                <div class="lineone_three"></div>
+                <div class="rowproduct_two">
+                  <div class="columnlinetwo-1">
+                    <div class="columnproduct-2">
+                      <p class="product_one ui text size-text2xl">Malunggay<br />(Moringga Leona)</p>
+                      <p class="ui text size-textlg">₱15 each | ₱110 for 6</p>
+                    </div>
+                    <div class="linetwo_three"></div>
+                    <div class="rowprice_one">
+                      <p class="description-1 ui text size-textxs">
+                        A Bread that’s Green, Mean, and Roarin’ Good!<br /><br />Each bite reveals a melted, cheesy
+                        center that’s both creamy and savory!
+                      </p>
+                      <div class="columnprice_one">
+                        <p class="ui text size-textxs">Quantity</p>
+                        <div quantity-input id="195:171" class="rowgroupseven">
+                          <div class="columncheck">
+                            <div class="row_one">
+                              <div quantity-decrease class="rowcheck_three">
+                                <img
+                                  src="public/images/img_check_indeterminate_small.svg"
+                                  alt="Check"
+                                  class="check_three"
+                                />
+                              </div>
+                              <div class="rowplus_three">
+                                <img src="public/images/img_plus.svg" alt="Plus" class="plus_three" />
+                              </div>
+                            </div>
+                            <label class="groupseven">
+                              <input
+                                name="groupseven"
+                                placeholder="3"
+                                type="number"
+                                quantity-for="195:171"
+                                step="1"
+                                min="0"
+                                value="1"
+                              />
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rowcancel">
+            <button class="flex-row-center-center cancel">Cancel</button>
+            <button class="flex-row-center-center confirm">Confirm</button>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="rowpandeleona">
+          <p class="pandeleona ui text size-texts">Pan de Leona</p>
+          <p class="pandeleona ui text size-texts">© 2024</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
