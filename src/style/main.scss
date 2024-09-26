@@ -3,15 +3,22 @@
   --secondary: #FFCC3C;
   --accent: #5c2410;
   
-  --text: #eb4a00;
+  --text: #fcf9f5;
   --fill: #d1b01a;
 }
+
+@font-face {
+  font-family: 'Marshie';
+  src: url('/fonts/Soft\ Marshmallow.otf');
+  font-weight: normal;
+  font-style: normal;
+  }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins';
+  font-family: 'Marshie';
 }
 
 html, body {

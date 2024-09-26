@@ -1,53 +1,73 @@
 main.route-order{    
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    background-color: #fcf9f5;
 
     .container {
         display: flex;
-        justify-content: space-around;
-        background-color: #FFCC3C;
+        justify-content: center;
+        background-color: var(--primary);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 95%;
+        width: 60%;
         margin-top: 1%;
+        height: 50%;
         // margin: 0 auto;
+    }
+
+    .prod-desc{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        img{
+            width: 20vw;
+            height: 25vh;
+            scale: 2.5;
+            margin-left: -25%;
+            margin-top: -20%;
+            // justify-self: right;  
+        }
+        .product-info{
+            margin-left: 20%;
+        }
     }
     
     .order-form {
         flex: 1;
-        border: #E9592B solid 10px;
-        border-radius: 10%;
+        // border: #fcf9f5 solid 10px;
+        // border-radius: 10%;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         // margin-right: 20px;
-        // align-items: center;
+        justify-items: center;
+        justify-content: center;
     }
     
     .bread-image {
         flex: 1;
     }
     
-    .bread-image img {
-        max-width: 100%;
-        border-radius: 10px;
-    }
-    
     h1 {
-        color: #E9592B;
+        color: #fcf9f5;
+    }
+    h2 {
+        color: #fcf9f5;
+        font-size: 2.5rem;
     }
     
     p {
         font-size: 1.2rem;
-        color: #1F2123;
+        color: #fcf9f5;
     }
     
     form {
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 100%;
     }
     
     label {
@@ -60,7 +80,7 @@ main.route-order{
         padding: 10px;
         border: none;
         border-radius: 5px;
-        width: 100%;
+        width: 50%;
     }
     
     button {
@@ -78,6 +98,85 @@ main.route-order{
     button:hover {
         background-color: #d87d14;
     }    
+
+    .product-info {
+        margin: 20px 0;
+    }
+    
+    .price {
+        color: var(--text);
+        font-weight: bold;
+    }
+    
+    .total-price {
+        margin: 20px 0;
+        font-size: 1.2em;
+    }
+    
+    .quantity-selector {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        width: 70%;
+        margin: 0 auto; 
+        margin-bottom: 1%;
+    }
+    
+    .quantity-btn {
+        background-color: var(--secondary);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 0 5px;
+        width: 50%;
+    }
+    
+    .quantity-btn:hover {
+        background-color: #e64a19;
+    }
+    
+    input[type="text"] {
+        width: 40px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    
+    .action-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .cancel-btn, .confirm-btn {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 5px;
+    }
+    
+    .cancel-btn {
+        background-color: #f44336;
+        color: #fff;
+    }
+    
+    .cancel-btn:hover {
+        background-color: #d32f2f;
+    }
+    
+    .confirm-btn {
+        background-color: #ff9800;
+        color: #fff;
+    }
+    
+    .confirm-btn:hover {
+        background-color: #fb8c00;
+    }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {

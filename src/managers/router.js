@@ -45,7 +45,7 @@ export default class Router {
 
             this.container.innerHTML = html
             this.container.className = `route-${url}`
-            routeHandlers[url]()
+            routeHandlers[url]
         }
 
         window.onhashchange = handleFetch
