@@ -17,8 +17,8 @@
 @font-face {
   font-display: swap;
   font-style: normal;
-  src: url("../public/fonts/InterRegular.ttf");
-  font-family: "Inter";
+  src: url("..public/fonts/Soft Marshmallow.otf");
+  font-family: "Soft Marshmallow";
   font-weight: 400;
 }
 
@@ -148,4 +148,89 @@ nav {
   button {
       width: 100%;
   }
+}
+
+/*For Text in Containers*/
+.ui {
+	&.text {
+		&.size-textxs {
+			font-size: 18px;
+			font-weight: 400;
+			font-style: normal;
+		}
+		&.size-texts {
+			font-size: 20px;
+			font-weight: 400;
+			font-style: bold;
+		}
+		&.size-textmd {
+			font-size: 25px;
+			font-weight: 400;
+			font-style: normal;
+			@media only screen and (max-width: 1050px) {
+				font-size: 23px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.ui.text.size-textxs {
+		font-size: 21px;
+	}
+	.ui.text.size-texts {
+		font-size: 33px;
+	}
+	.ui.text.size-textmd {
+		font-size: 34px;
+	}
+	.ui.text.size-textlg {
+		font-size: 36px;
+	}
+	.ui.text.size-textxl {
+		font-size: 40px;
+	}
+}
+
+.ui {
+	&.text {
+		color: var(--gray_50);
+		font-family: Varela Round;
+
+		&.size-textlg {
+			font-size: 37px;
+			font-weight: 400;
+			font-style: bold;
+			@media only screen and (max-width: 1050px) {
+				font-size: 35px;
+			}
+		}
+
+		&.size-textxl {
+			font-size: 38px;
+			font-weight: 400;
+			font-style: bold;
+			@media only screen and (max-width: 1050px) {
+				font-size: 36px;
+			}
+		}
+
+		&.size-text2xl {
+			font-size: 40px;
+			font-weight: 400;
+			font-style: bold;
+			@media only screen and (max-width: 1050px) {
+				font-size: 38px;
+			}
+		}
+
+		&.size-text3xl {
+			font-size: 50px;
+			font-weight: 400;
+			font-style: bold;
+			@media only screen and (max-width: 1050px) {
+				font-size: 46px;
+			}
+		}
+	}
 }

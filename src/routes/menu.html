@@ -2,42 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Menu</title>
+    <title>Home page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" type="text/css" href="./style/main.scss" />
+    <link rel="stylesheet" type="text/css" href="./style/home.scss" />
   </head>
+  
   <body>
-    <div class="menu-page">
-      <div>
-        <div>
-          <header class="navbar">
-            <img src="public/images/img_header_logo.png" alt="Headerlogo" class="headerlogo_one" />
-            <ul class="tabs">
-              <li>
-                <a href="home.html" class="home-link">
-                  <p class="home ui text size-textmd">Home</p>
-                </a>
-              </li>
-              <li>
-                <a href="menu.html" class="menu-link">
-                  <p class="menu ui text size-textmd">Menu</p>
-                </a>
-              </li>
-              <li>
-                <a href="order.html" class="menu-link">
-                  <p class="menu ui text size-textmd">Order Now</p>
-                </a>
-              </li>
-              <li>
-                <a href="about.html" class="menu-link">
-                  <p class="menu ui text size-textmd">About Us</p>
-                </a>
-              </li>
-            </ul>
-          </header>
+    <div class="home-page">
+      <header class="navbar">
+        <img src="public/img/img_logo.png" alt="Headerlogo" class="headerlogo_one" />
+        <ul class="tabs">
+          <li>
+            <a href="home.html" class="home-link">
+              <p class="home ui text size-textmd">Home</p>
+            </a>
+          </li>
+          <li>
+            <a href="menu.html" class="menu-link">
+              <p class="menu ui text size-textmd">Menu</p>
+            </a>
+          </li>
+          <li>
+            <a href="order.html" class="menu-link">
+              <p class="menu ui text size-textmd">Order Now</p>
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="menu-link">
+              <p class="menu ui text size-textmd">About Us</p>
+            </a>
+          </li>
+        </ul>
+      </header>
+
           <div class="container">
-            <div class="column_two">
+            <div class="column_one">
               <div class="columnmenu_one">
                 <p class="menu_one ui text size-text3xl">Explore our Flavours!</p>
+                
+                /*Classic-Malunggay-Cheezy*/
                 <div class="rowclassic">
                   <div class="menu_page">
                     <div class="columnclassic">
@@ -48,7 +53,7 @@
                       </div>
                     </div>
                     <div class="columnclassic">
-                      <img src="public/images/img_classic_2_1.png" alt="Classic Leona" class="classic_leona" />
+                      <img src="public/images/img_classic_2_1.png" alt="Malunggay Leona" class="classic_leona" />
                       <div class="columnproduct-3">
                         <p class="product-1 ui text size-text2xl">Classic <br />Leona</p>
                         <p class="ui text size-textmd">₱15 each | ₱90 for 6</p>
@@ -57,22 +62,22 @@
                   </div>
                   <div class="product3">
                     <div class="column">
+                      <img src="public/images/img_cheezy_1_1.png" alt="Cheese" class="cheese_one" />
                       <p class="product ui text size-text2xl">Cheese <br />(Cheesy Leona)</p>
                       <p class="ui text size-textmd">₱16 each | ₱120 for 6</p>
                     </div>
-                    <img src="public/images/img_cheezy_1_1.png" alt="Cheese" class="cheese_one" />
                   </div>
                 </div>
                 <div class="rowproduct_one">
                   <div class="product4">
                     <div class="columnproduct-1">
+                      <img src="public/images/img_choco_2.png" alt="Choco" class="choco_one" />
                       <p class="product_one ui text size-textlg">Chocolate (Choco Roar Leona)</p>
                       <p class="ui text size-textmd">₱18 each | ₱120 for 6</p>
                     </div>
-                    <img src="public/images/img_choco_2.png" alt="Choco" class="choco_one" />
                   </div>
-                  <div class="column_one">
-                    <img src="public/images/img_matcha_2_1.png" alt="Imagematcha" class="imagematcha_one" />
+                  <div class="columnmatcha">
+                    <img src="public/img/matcha.png" alt="Matcha" class="matcha_one" />
                     <div class="columnproduct-2">
                       <p class="product_two ui text size-text2xl">Matcha Leona (Special)</p>
                       <p class="ui text size-textmd">₱12 each | ₱90 for 6</p>
@@ -80,7 +85,7 @@
                   </div>
                   <div class="product6">
                     <div class="columnubecheese">
-                      <img src="public/images/img_ube_cheese_4.png" alt="Ubecheese" class="ubecheese_one" />
+                      <img src="public/img/ube-cheese.png" alt="Ubecheese" class="ubecheese_one" />
                       <div class="columnproduct-5">
                         <p class="product_three ui text size-textxl">Ube Cheese (Ube Leona</p>
                         <p class="ui text size-textmd">₱20 each | ₱150 for 6</p>
@@ -89,7 +94,7 @@
                   </div>
                 </div>
                 <div class="columnyema_one">
-                  <img src="public/images/img_yema_1_1.png" alt="Yema" class="yema_one" />
+                  <img src="public/img/yema.png" alt="Yema" class="yema_one" />
                   <div class="columnproduct">
                     <p class="product_four ui text size-textxl">Yema<br />(Yema Leona)</p>
                     <p class="ui text size-textmd">₱20 each | ₱150 for 6</p>
@@ -101,7 +106,7 @@
         </div>
         <div class="footer">
           <div class="logo">
-            <img src="public/images/img_close_30x26.png" alt="Close" class="close_one" />
+            <img src="public/img/img_logo.png" alt="Close" class="close_one" />
             <p class="pandeleona ui text size-textxs">Pan de Leona</p>
             <p class="twothousandtwen ui text size-textxs">© 2024</p>
           </div>
