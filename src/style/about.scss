@@ -3,4 +3,53 @@ main.route-about{
     svg{
         width: 100%;
     }
+
+    .title {
+        color: var(--deep_orange_600) !important;
+    }
+    
+    .description-2 {
+        width: 44%;
+        line-height: 28px;
+        @media only screen and (max-width: 1050px) {
+            width: 100%;
+        }
+    }
+    
+    .member {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .columnproduct {
+        margin-top: -158px;
+        gap: var(--space-lg);
+        display: flex;
+        position: relative;
+        background-color: var(--deep_orange_50);
+        flex-direction: column;
+        align-items: center;
+        padding: var(--space-sm);
+        border-radius: var(--radius-sm);
+    
+        @media only screen and (max-width: 1050px) {
+            gap: 60px;
+        }
+    }
+    
+    .product {
+        margin-top: 142px;
+        text-align: center;
+        line-height: 34px;
+    }
+    
+    /* Media query fixed */
+    @media only screen and (max-width: 550px) {
+        .row {
+            flex-direction: column;
+            gap: 51px;
+        }
+    }   
+    
 }
