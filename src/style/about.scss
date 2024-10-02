@@ -1,6 +1,495 @@
-main.route-about{    
-    background-color: whitesmoke;
-    svg{
+main.route-about{ 
+    --variable-collection-color: rgba(255, 204, 60, 1);
+    --variable-collection-color-2: rgba(252, 249, 245, 1);
+    --variable-collection-color-3: rgba(31, 33, 35, 1);
+    --variable-collection-color-4: rgba(233, 89, 43, 1);
+    --variable-collection-color-5-link: rgba(61, 124, 187, 1);
+    
+    overflow: hidden;
+
+    .container {
         width: 100%;
-    }
+        // height: 1348px;
+        margin-top: -10%;
+      }
+      
+      .container .overlap {
+        position: relative;
+        height: 2937px;
+        top: 100px;
+        background-color: var(--variable-collection-color-2);
+      }
+      
+      .container .header {
+        position: absolute;
+        width: 1094px;
+        height: 453px;
+        top: 40px;
+        left: 94px;
+        background-color: transparent;
+      }
+      
+      .container .overlap-group {
+        position: relative;
+        width: 100%;
+        height: 453px;
+      }
+      
+      .container .logo {
+        position: absolute;
+        width: 286px;
+        height: 322px;
+        top: 131px;
+        left: 405px;
+      }
+      
+      .container .text-wrapper {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.12;
+        font-family: "Soft Marshmallow-Regular", Helvetica;
+        font-weight: 400;
+        color: #e9592b;
+        font-size: 380px;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+        z-index: -1;
+      }
+      
+      .container .about-pandeleona {
+        position: absolute;
+        width: 100%;
+        height: 1276px;
+        top: 528px;
+        left: 97px;
+      }
+      
+      .container .history-section {
+        position: absolute;
+        width: 954px;
+        height: 282px;
+        top: 0;
+        left: 69px;
+      }
+      
+      .container .description {
+        width: 948px;
+        top: 116px;
+        left: 0;
+        font-size: 18px;
+        line-height: 28px;
+        position: absolute;
+        font-family: "Varela Round", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        letter-spacing: 0;
+      }
+      
+      .container .div {
+        top: 61px;
+        left: 327px;
+        font-size: 20px;
+        line-height: normal;
+        white-space: nowrap;
+        position: absolute;
+        font-family: "Varela Round", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        letter-spacing: 0;
+      }
+      
+      .container .about-PDL {
+        position: absolute;
+        top: 0;
+        left: 329px;
+        font-family: "Soft Marshmallow-Regular", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-4);
+        font-size: 40px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+      
+      .container .overlap-2 {
+        position: absolute;
+        width: 1069px;
+        height: 973px;
+        top: 303px;
+        left: 0;
+      }
+      
+      .container .mission-section {
+        position: absolute;
+        width: 992px;
+        height: 531px;
+        top: 0;
+        left: 77px;
+      }
+      
+      .container .mission {
+        position: absolute;
+        width: 419px;
+        height: 251px;
+        top: 151px;
+        left: 0;
+      }
+      
+      .container .p {
+        width: 415px;
+        top: 59px;
+        left: 0;
+        font-size: 18px;
+        line-height: 28px;
+        position: absolute;
+        font-family: "Varela Round", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        letter-spacing: 0;
+      }
+      
+      .container .about-PDL-2 {
+        left: 99px;
+        position: absolute;
+        top: 0;
+        font-family: "Soft Marshmallow-Regular", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-4);
+        font-size: 40px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+      
+      .container .image {
+        position: absolute;
+        width: 564px;
+        height: 531px;
+        top: 0;
+        left: 428px;
+        background-image: url(./img/vector.png);
+        background-size: 100% 100%;
+      }
+      
+      .container .img {
+        position: absolute;
+        width: 421px;
+        height: 300px;
+        top: 117px;
+        left: 69px;
+      }
+      
+      .container .vision-section {
+        position: absolute;
+        width: 1022px;
+        height: 479px;
+        top: 494px;
+        left: 0;
+      }
+      
+      .container .vision {
+        position: absolute;
+        width: 438px;
+        height: 294px;
+        top: 102px;
+        left: 588px;
+      }
+      
+      .container .description-2 {
+        width: 434px;
+        height: 222px;
+        top: 72px;
+        left: 0;
+        font-size: 18px;
+        line-height: 28px;
+        position: absolute;
+        font-family: "Varela Round", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        letter-spacing: 0;
+      }
+      
+      .container .about-PDL-3 {
+        left: 126px;
+        position: absolute;
+        top: 0;
+        font-family: "Soft Marshmallow-Regular", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-4);
+        font-size: 40px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+      
+      .container .overlap-group-wrapper {
+        position: absolute;
+        width: 572px;
+        height: 479px;
+        top: 0;
+        left: 0;
+      }
+      
+      .container .overlap-group-2 {
+        position: relative;
+        width: 528px;
+        height: 421px;
+        top: 31px;
+        left: 22px;
+      }
+      
+      .container .vector {
+        position: absolute;
+        width: 174px;
+        height: 187px;
+        top: 234px;
+        left: 0;
+      }
+      
+      .container .vector-2 {
+        position: absolute;
+        width: 181px;
+        height: 181px;
+        top: 0;
+        left: 347px;
+      }
+      
+      .container .image-2 {
+        position: absolute;
+        width: 444px;
+        height: 317px;
+        top: 44px;
+        left: 37px;
+        object-fit: cover;
+      }
+      
+      .container .separator {
+        position: absolute;
+        width: 987px;
+        height: 2px;
+        top: 1828px;
+        left: 156px;
+      }
+      
+      .container .about-creators {
+        position: absolute;
+        width: 892px;
+        height: 872px;
+        top: 1938px;
+        left: 196px;
+      }
+      
+      .container .title {
+        position: absolute;
+        width: 467px;
+        top: 0;
+        left: 211px;
+        font-family: "Soft Marshmallow-Regular", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-4);
+        font-size: 50px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+      
+      .container .member {
+        height: 353px;
+        top: 127px;
+        left: 0;
+        position: absolute;
+        width: 224px;
+      }
+      
+      .container .overlap-group-3 {
+        position: relative;
+        width: 220px;
+        height: 353px;
+      }
+      
+      .container .card {
+        height: 319px;
+        top: 34px;
+        position: absolute;
+        width: 220px;
+        left: 0;
+      }
+      
+      .container .image-3 {
+        position: absolute;
+        width: 193px;
+        height: 193px;
+        top: 0;
+        left: 13px;
+      }
+      
+      .container .description-3 {
+        width: 176px;
+        top: 307px;
+        left: 22px;
+        font-size: 18px;
+        text-align: center;
+        line-height: normal;
+        position: absolute;
+        font-family: "Varela Round", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        letter-spacing: 0;
+      }
+      
+      .container .product {
+        top: 197px;
+        position: absolute;
+        width: 157px;
+        left: 31px;
+        font-family: "Soft Marshmallow-Regular", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+      
+      .container .overlap-wrapper {
+        height: 353px;
+        top: 127px;
+        left: 335px;
+        position: absolute;
+        width: 224px;
+      }
+      
+      .container .description-4 {
+        width: 176px;
+        top: 307px;
+        left: 30px;
+        font-size: 18px;
+        text-align: center;
+        line-height: normal;
+        position: absolute;
+        font-family: "Varela Round", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        letter-spacing: 0;
+      }
+      
+      .container .div-wrapper {
+        height: 353px;
+        top: 127px;
+        left: 670px;
+        position: absolute;
+        width: 224px;
+      }
+      
+      .container .product-2 {
+        top: 209px;
+        position: absolute;
+        width: 157px;
+        left: 31px;
+        font-family: "Soft Marshmallow-Regular", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+      
+      .container .member-2 {
+        height: 357px;
+        top: 515px;
+        left: 0;
+        position: absolute;
+        width: 224px;
+      }
+      
+      .container .overlap-3 {
+        position: relative;
+        width: 220px;
+        height: 357px;
+      }
+      
+      .container .card-2 {
+        height: 319px;
+        top: 38px;
+        position: absolute;
+        width: 220px;
+        left: 0;
+      }
+      
+      .container .description-5 {
+        width: 176px;
+        top: 314px;
+        left: 21px;
+        font-size: 18px;
+        text-align: center;
+        line-height: normal;
+        position: absolute;
+        font-family: "Varela Round", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        letter-spacing: 0;
+      }
+      
+      .container .product-3 {
+        top: 199px;
+        position: absolute;
+        width: 157px;
+        left: 31px;
+        font-family: "Soft Marshmallow-Regular", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+        white-space: nowrap;
+      }
+      
+      .container .member-3 {
+        height: 357px;
+        top: 515px;
+        left: 335px;
+        position: absolute;
+        width: 224px;
+      }
+      
+      .container .member-4 {
+        height: 357px;
+        top: 515px;
+        left: 670px;
+        position: absolute;
+        width: 224px;
+      }
+      
+      .container .card-3 {
+        height: 323px;
+        top: 34px;
+        position: absolute;
+        width: 220px;
+        left: 0;
+      }
+      
+      .container .description-6 {
+        width: 176px;
+        top: 312px;
+        left: 22px;
+        font-size: 18px;
+        text-align: center;
+        line-height: normal;
+        position: absolute;
+        font-family: "Varela Round", Helvetica;
+        font-weight: 400;
+        color: var(--variable-collection-color-3);
+        letter-spacing: 0;
+      }      
 }
