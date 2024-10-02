@@ -1,8 +1,4 @@
 main.route-home{    
-.menu-link {
-	cursor: pointer;
-}
-
 @media only screen and (max-width: 550px) {
 	.menu-link {
 		padding-left: 20px;
@@ -10,82 +6,304 @@ main.route-home{
 	}
 }
 
-.menu {
+header .menu-link {
 	color: var(--deep_orange_600) !important;
-	padding: 6px 24px;
+	padding: 6px 15px;
 }
 
-.menu:hover {
+header .menu-link:hover {
 	color: var(--gray_50_01) !important;
 	background-color: var(--deep_orange_600);
 	border-radius: var(--radius-sm);
 }
 
-.header {
+header {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	width: 100%;
+	height: 100px;
+	flex-shrink: 0;
 }
 
-.freshly_baked {
-	height: 40px;
-	margin-top: 14px;
-	margin-left: 84px;
-}
-
-@media only screen and (max-width: 1050px) {
-	.freshly_baked {
-		margin-left: 0px;
-	}
-}
-
-.freshly_baked-1 {
-	margin-top: 14px;
-	margin-left: 14px;
-}
-
-@media only screen and (max-width: 1050px) {
-	.freshly_baked-1 {
-		margin-left: 0px;
-	}
-}
-
-.straightfromour {
-	margin-top: 4px;
-	font-family: Varela Round !important;
-	text-align: center;
-	align-self: stretch;
-	line-height: 19px;
-}
-
-.description-2 {
-	color: var(--gray_50) !important;
-	font-family: Inter !important;
-	text-align: center;
-	line-height: 24px;
-}
-
-.headerlogo_one {
-	height: 72px;
-	margin-left: 22px;
-	width: 352px;
-	object-fit: contain;
-}
-
-@media only screen and (max-width: 1050px) {
-	.headerlogo_one {
-		margin-left: 0px;
-	}
-}
-
-.tabs {
+.navbar{
 	margin-bottom: 12px !important;
 	gap: 18px;
 	align-self: end;
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
+	text-decoration: none;
+	display: flex;
+
+	a {
+		text-decoration: none;
+		list-style-type: none;
+	}
 }
+
+.tagline-section{
+	height: 700px;
+	background-color: #E9592B;
+	object-fit: contain;
+	overflow: visible;
+	img{
+		width: 60%;
+		float: inline-end;
+		margin-top: -300px;
+	}
+	.rowtagline {
+		float: left;
+		height: 60%;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		align-items: start;
+		position: absolute;
+		margin: auto;
+	}	
+	.tagline {
+		color: var(--gray_50_01) !important;
+		max-width: 55%;
+		margin-top: 10%;
+		margin-left: 10%;
+	}
+	.tagline-span{
+		flex-shrink: 0;
+		color: var(--Color-2, #FCF9F5);
+		font-family: "Soft Marshmallow";
+		font-size: 2.9rem;
+		width: 50%;
+		line-height: 50px;
+	}
+	.description {
+		color: var(--Color-2, #FCF9F5);
+		font-family: "Varela Round";
+		font-size: 1rem;
+		width: 50%;
+		line-height: 30px;
+		position: absolute;
+		left: 10%;
+		top: 55%;
+	}
+	.rowbutton{
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		align-items: center;
+		button {
+			margin-top: 27%;
+			margin-left: 8%;
+			font-family: "Marshie";
+			font-size: 1.3rem;
+			border-radius: 10px;
+			border-style: none;
+			background: var(--Color-2, #FCF9F5);
+			padding: 10px 25px;
+			font-family: "Soft Marshmallow";
+		}
+		a {
+			color: #E9592B;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #FCF9F5;
+			font-family: "Soft Marshmallow";
+			background-color: #E9592B;
+		}
+	}
+	
+	
+	@media only screen and (max-width: 1050px) {
+		.tagline {
+			width: 100%;
+			padding-left: 20px;
+			padding-right: 20px;
+		img{
+			height: 80%;
+		}
+		.rowtagline {
+			flex-direction: column;
+			position: relative;
+		}
+		.tagline-span{
+			font-size: 2rem;
+		}
+		.description{
+			font-size: 0.8rem;
+		}
+		.rowbutton a{
+			top: 30%;
+		}
+	}
+	}
+}
+
+.product-display-section{
+	display: block;
+	background-color: #FCF9F5;
+	width: 100%;
+	height: 650px;
+	
+	text-align: center;
+	flex-shrink: 0;
+	color: #1F2123;
+	font-family: "Soft Marshmallow";
+	font-size: 2.9rem;
+	overflow: hidden;
+	
+	.title {
+		padding: 20px;
+		color: #E9592B;
+	}
+	.pandesaldisplay {
+		position:static;
+		object-fit: contain;
+		flex-wrap: wrap-reverse
+	}
+	
+	.product-display {
+		margin: 20px;
+		align-self: stretch;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin-right: auto;
+		transition: 0.3s;
+		img{
+			width: 30%;
+		}
+		img:hover{
+			width: 35%;
+			opacity: 0.9;
+			margin: -50px -80px;
+		}
+	}
+	.product {
+		display:inline-block;
+		margin-top: -80px;
+		flex-shrink: 0;
+		.name{
+			font-size: 1.5rem;
+			font-family: "Soft Marshmallow";
+		}
+		.description{
+			font-family: "Varela Round";
+			font-size: 1rem;
+		}
+	}
+
+@media only screen and (max-width: 1050px) {
+	.product-display-section{
+		height: 100%;
+	}
+	.product-display {
+		padding: 0px 20px;
+	}
+	.pandesaldisplay {
+		width: 30%;
+		overflow: hidden;
+	}
+}
+}
+
+.delivery-section{
+	background-color: #1F2123;
+	.rowfreshly {
+		flex-wrap: wrap;
+		flex-direction: column;
+		position: relative;
+		background-image: url(img/homepage_pandesal.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.feature{
+		border-radius: 15px;
+		background: var(--Color-2, #FCF9F5); 
+		width: 20%;
+		padding: 10px;
+		margin: 10px;
+		text-align: center;
+		justify-content: space-around;
+
+		.name{
+			font-size: 1.5rem;
+			font-family: "Soft Marshmallow";
+		}
+		.description{
+			font-family: "Varela Round";
+			font-size: 1rem;
+		}
+		.freshly_baked{
+			display: block;
+			flex-direction: row-reverse;
+		}
+
+	}
+
+	@media only screen and (max-width: 1050px) {
+	.rowfreshly {
+		padding: 20px;
+	}
+	}
+	.freshly_baked {
+		height: 40px;
+		margin-top: 14px;
+		margin-left: 84px;
+		color: #E9592B;
+		align-items: center;
+	}	
+	.description {
+		display: inline-flex;
+		margin-top: 4px;
+		font-family: Varela Round !important;
+		text-align: center;
+		font-size: 0.8rem;
+		line-height: 19px;
+	}
+	.container {
+		margin-bottom: 80px;
+		
+	}
+	
+	@media only screen and (max-width: 1050px) {
+		.container {
+			flex-direction: column;
+		}
+	}
+}
+
+}
+
+.funfacts-section{
+	background-color: #FCF9F5;
+	font-size: 1rem;
+}
+
+
+footer{
+	display: flex;
+	background-color: white;
+
+	p{
+		display: flex;
+	}
+
+	img{
+		height: 10px;
+	}
+}
+.headerlogo {
+	height: 72px;
+	object-fit: contain;
+}
+
+@media only screen and (max-width: 1050px) {
+	.headerlogo {
+		margin-left: 0px;
+	}
+}
+
 
 @media only screen and (max-width: 1050px) {
 	.tabs {
@@ -111,127 +329,4 @@ main.route-home{
 .home {
 	color: var(--gray_50_01) !important;
 	padding: 6px 24px;
-}
-
-.rowtagline {
-	flex: 1;
-	display: flex;
-	justify-content: flex-end;
-	align-items: start;
-	position: absolute;
-	bottom: -1px;
-	right: 0px;
-	left: 0px;
-	margin: auto;
-}
-
-@media only screen and (max-width: 1050px) {
-	.rowtagline {
-		flex-direction: column;
-		position: relative;
-	}
-}
-
-.tagline {
-	color: var(--gray_50_01) !important;
-	width: 40%;
-	line-height: 57px;
-}
-
-@media only screen and (max-width: 1050px) {
-	.tagline {
-		width: 100%;
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-}
-
-.tagline-span {
-	color: var(--gray_50_01);
-}
-
-.description {
-	color: var(--gray_50_01) !important;
-	font-family: Varela Round !important;
-	width: 50%;
-	line-height: 24px;
-	position: absolute;
-	left: 8%;
-	top: 39%;
-	margin: auto;
-}
-
-.columntitle {
-	margin-left: auto;
-	align-self: stretch;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	max-width: 1272px;
-	width: 100%;
-	margin-right: auto;
-}
-
-@media only screen and (max-width: 1050px) {
-	.columntitle {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-}
-
-.title {
-	color: var(--deep_orange_600) !important;
-}
-
-.pandesaldisplay {
-	height: 426px;
-	width: 32%;
-	object-fit: contain;
-}
-
-@media only screen and (max-width: 1050px) {
-	.pandesaldisplay {
-		width: 100%;
-	}
-}
-
-
-.product {
-	margin-top: -26px;
-	gap: 8px;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.rowfreshly {
-	height: 426px;
-	margin-top: -6px;
-	position: relative;
-	background-image: url(../public/img/homepage_pandesal.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	align-self: stretch;
-	padding: 66px 56px;
-}
-
-@media only screen and (max-width: 1050px) {
-	.rowfreshly {
-		height: auto;
-		padding: 20px;
-	}
-}
-
-.home_page {
-	margin-bottom: 80px;
-	gap: var(--space-xs);
-	display: flex;
-}
-
-@media only screen and (max-width: 1050px) {
-	.home_page {
-		flex-direction: column;
-	}
-}
 }

@@ -1,35 +1,259 @@
-<div class="container">
-  <div class="order-form">
-      <h1>Order Now!</h1>
-      <p>Don't loaf around, place your order now!</p>
-      <form action="/">
-            
-        <div class="prod-desc">
-            <img src="/img/cheese.png" alt="Delicious Bread">
-            <div class="product-info">
-                <h2>Cheese (Cheesy Leona)</h2>
-                <p class="price">₱16 each | ₱120 for 6</p>
-                <div class="total-price">
-                    <p>Total: ₱48</p>
-                </div>
-            </div>
-        </div>
-        <div class="quantity-selector">
-            <button type="button" class="quantity-btn">-</button>
-            <input type="number" title="Quantity" name="quantity" min="1" readonly>
-            <button  type="button" class="quantity-btn">+</button>
-        </div>
-        <div class="action-buttons">
-            <button type="button" class="cancel-btn">Cancel</button>
-            <button type="button" class="confirm-btn">Confirm</button>
-        </div>
-          <!-- <select id="bread-type" name="bread-type" required>
-              <option value="sourdough">Sourdough</option>
-              <option value="baguette">Baguette</option>
-              <option value="rye">Rye</option>
-              <option value="whole-wheat">Whole Wheat</option>
-          </select> -->
-      </form>
-  </div>
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+    <script type="module" defer>
+      /**
+       * Handles the value change functionality in a switch
+       */
+      function handleSwitch(/** @type {HTMLElement} */ target) {
+        const track = target;
+        const thumb = target.querySelector("span:last-child");
+        const input = target.querySelector("input[hidden]");
 
+        const template = track.querySelector("template");
+        const trackSelected = template.content.querySelector("[track-selected]");
+        const trackUnselected = template.content.querySelector("[track-unselected]");
+
+        const thumbSelected = template.content.querySelector("[thumb-selected]");
+        const thumbUnselected = template.content.querySelector("[thumb-unselected]");
+
+        function setBaseStyles() {
+          requestAnimationFrame(() => {
+            input.style.display = "none";
+
+            track.style.display = "flex";
+            track.style.cursor = "pointer";
+            track.style.alignItems = "center";
+          });
+        }
+
+        function setBaseTransitions() {
+          requestAnimationFrame(() => {
+            track.style.transition = "background 320ms ease-in-out";
+            thumb.style.transition = "background 320ms ease-in-out, transform 320ms ease-in-out";
+          });
+        }
+
+        function setClassList(checked = false) {
+          requestAnimationFrame(() => {
+            track.classList.remove(...Array.from(trackSelected.classList));
+            thumb.classList.remove(...Array.from(thumbSelected.classList));
+            track.classList.remove(...Array.from(trackUnselected.classList));
+            thumb.classList.remove(...Array.from(thumbUnselected.classList));
+
+            if (checked) {
+              track.classList.add(...Array.from(trackSelected.classList));
+              thumb.classList.add(...Array.from(thumbSelected.classList));
+            } else {
+              track.classList.add(...Array.from(trackUnselected.classList));
+              thumb.classList.add(...Array.from(thumbUnselected.classList));
+            }
+          });
+        }
+
+        function setSwitchPosition(checked = false) {
+          setBaseStyles();
+          setClassList(input.checked);
+          requestAnimationFrame(() => {
+            const trackWidth = track.clientWidth;
+            const trackHeight = track.clientHeight;
+            const thumbWidth = thumb.clientWidth;
+            const thumbHeight = thumb.clientHeight;
+            const minOffset = (trackHeight - thumbHeight) / 2;
+            const maxOffset = trackWidth - thumbWidth - minOffset;
+            thumb.style.transform = `translateX(${checked ? maxOffset : minOffset}px)`;
+            track.setAttribute("aria-checked", checked.toString());
+            setBaseTransitions();
+          });
+        }
+
+        function handleChange(/** @type {Event} */ event) {
+          setSwitchPosition(input.checked);
+        }
+
+        function handleKeyDown(/** @type {KeyboardEvent} */ event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            input.dispatchEvent(new MouseEvent("click"));
+          }
+        }
+
+        setSwitchPosition(input.checked);
+
+        input.addEventListener("change", handleChange);
+        track.addEventListener("keydown", handleKeyDown);
+      }
+
+      /**
+       * Hydrate Switch Element(s)
+       */
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll("label[role=switch]"));
+
+        for (const element of elements) {
+          try {
+            handleSwitch(element);
+          } catch (error) {
+            console.error(error);
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="order-page">
+        
+      <div class="container">
+        <div class="order_page">
+          <div class="columntitle">
+            <p class="title ui text size-textxl">Order Now</p>
+            <div class="rowproduct container-xs">
+              <img src="public/img/cheese.png" alt="Image" class="image" />
+              <div class="columnproduct">
+                <p class="product ui text size-text2xl">Cheese (Cheesy Leona)</p>
+                <div class="row_two">
+                  <div class="rowprice">
+                    <div class="columnprice">
+                      <p class="ui text size-textlg">₱16 each | ₱120 for 6</p>
+                      <div class="linetwo_one"></div>
+                      <p class="description ui text size-textxs">
+                        So Cheesy, It’ll Make You Grin! <br /><br />Each bite reveals a melted, cheesy center that’s
+                        both creamy and savory!
+                      </p>
+                    </div>
+                    <div class="column">
+                      <p class="ui text size-textxs">Quantity</p>
+                      <div class="rowthree">
+                        <div class="columnthree">
+                          <div class="row_one">
+                            <label for="switch2" role="switch" tabindex="0" class="switch-1">
+                              <template>
+                                <template track-unselected class="dhi-group-3"> </template>
+                                <template track-selected class="dhi-group-4"> </template>
+                                <template thumb-unselected> </template>
+                                <template thumb-selected> </template>
+                              </template>
+                              <input type="checkbox" name="switch" id="switch2" aria-hidden="true" hidden />
+                              <span class="dhi-group"> </span>
+                            </label>
+                            <div class="row">
+                              <img src="public/img/plus.svg" alt="Image" class="image_one" />
+                            </div>
+                          </div>
+                          <button class="flex-row-center-center three">3</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columntitle">
+            <p class="title ui text size-textxl">Order Now</p>
+            <div class="rowproduct container-xs">
+              <img src="public/img/cheese.png" alt="Image" class="image" />
+              <div class="columnproduct">
+                <p class="product ui text size-text2xl">Cheese (Cheesy Leona)</p>
+                <div class="row_two">
+                  <div class="rowprice">
+                    <div class="columnprice">
+                      <p class="ui text size-textlg">₱16 each | ₱120 for 6</p>
+                      <div class="linetwo_one"></div>
+                      <p class="description ui text size-textxs">
+                        So Cheesy, It’ll Make You Grin! <br /><br />Each bite reveals a melted, cheesy center that’s
+                        both creamy and savory!
+                      </p>
+                    </div>
+                    <div class="column">
+                      <p class="ui text size-textxs">Quantity</p>
+                      <div class="rowthree">
+                        <div class="columnthree">
+                          <div class="row_one">
+                            <label for="switch1" role="switch" tabindex="0" class="switch-1">
+                              <template>
+                                <template track-unselected class="dhi-group-3"> </template>
+                                <template track-selected class="dhi-group-4"> </template>
+                                <template thumb-unselected> </template>
+                                <template thumb-selected> </template>
+                              </template>
+                              <input type="checkbox" name="switch" id="switch1" aria-hidden="true" hidden />
+                              <span class="dhi-group"> </span>
+                            </label>
+                            <div class="row">
+                              <img src="public/img/plus.svg" alt="Image" class="image_one" />
+                            </div>
+                          </div>
+                          <button class="flex-row-center-center three">3</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columntitle">
+            <p class="title ui text size-textxl">Order Now</p>
+            <div class="rowproduct container-xs">
+              <img src="public/img/cheese.png" alt="Image" class="image" />
+              <div class="columnproduct">
+                <p class="product ui text size-text2xl">Cheese (Cheesy Leona)</p>
+                <div class="row_two">
+                  <div class="rowprice">
+                    <div class="columnprice">
+                      <p class="ui text size-textlg">₱16 each | ₱120 for 6</p>
+                      <div class="linetwo_one"></div>
+                      <p class="description ui text size-textxs">
+                        So Cheesy, It’ll Make You Grin! <br /><br />Each bite reveals a melted, cheesy center that’s
+                        both creamy and savory!
+                      </p>
+                    </div>
+                    <div class="column">
+                      <p class="ui text size-textxs">Quantity</p>
+                      <div class="rowthree">
+                        <div class="columnthree">
+                          <div class="row_one">
+                            <label for="switch1" role="switch" tabindex="0" class="switch-1">
+                              <template>
+                                <template track-unselected class="dhi-group-3"> </template>
+                                <template track-selected class="dhi-group-4"> </template>
+                                <template thumb-unselected> </template>
+                                <template thumb-selected> </template>
+                              </template>
+                              <input type="checkbox" name="switch" id="switch1" aria-hidden="true" hidden />
+                              <span class="dhi-group"> </span>
+                            </label>
+                            <div class="row">
+                              <img src="public/img/plus.svg" alt="Image" class="image_one" />
+                            </div>
+                          </div>
+                          <button class="flex-row-center-center three">3</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rowcancel">
+          <button class="flex-row-center-center cancel">Cancel</button>
+          <button class="flex-row-center-center confirm">Confirm</button>
+        </div>
+      </div>
+      <footer class="footer">
+          <div class="logo">
+            <img src="public/img/img_logo.png" alt="Close" class="close_one" />
+            <p class="pandeleona ui text size-textxs">Pan de Leona</p>
+            <p class="twothousandtwen ui text size-textxs">© 2024</p>
+          </div>
+      </footer>
+    </div>
+  </body>
+</html>
